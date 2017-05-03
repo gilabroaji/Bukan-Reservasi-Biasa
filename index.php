@@ -18,7 +18,7 @@
   <li><a href="#"> </a></li>
   <li><a href="#"> </a></li>
   <li class="dropdown">
-    <a href="javascript:void(0)" class="dropbtn">Settings</a>
+    <a href="javascript:void(0)" class="dropbtn">Arsyan</a> //ganti setting menjadi Arsyan
     <div class="dropdown-content">
     
       <a href="#">Profile</a>
