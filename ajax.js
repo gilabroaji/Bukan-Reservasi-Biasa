@@ -1,39 +1,24 @@
 var xmlHttp;
-function showMatkul(str){
-	xmlHttp = GetXmlHttpObject();
+function showMeja(str){
+	xmlHttp = GetXmlHttpObject()
 	if (xmlHttp == null){
-		alert("Tidak support request");
+		alert("Tidak support request")
 		return;
 	}
-	var url = "get_matkul.php?kodeprodi="+str;
-	xmlHttp.onreadystatechange = prodiChanged;
-	xmlHttp.open("GET",url,true);
-	xmlHttp.send(null);
+	var url = "get_meja.php"
+	url = url+"?meja="+str
+	url = url+"&sid="+Math.random()
+	xmlHttp.onreadystatechange = tableChanged
+	xmlHttp.open("GET",url,true)
+	xmlHttp.send(null)
 }
-function prodiChanged(){
+function tableChanged(){
 	if(xmlHttp.readyState == 4 || xmlHttp.readyState == "complete"){
-		document.getElementById("divMatkul").innerHTML = xmlHttp.responseText;
+		document.getElementById("meja").innerHTML = xmlHttp.responseText
 	}
 }
 /* END OF OPTIONS*/
 
-function showDosen(str){
-	xmlHttp = GetXmlHttpObject();
-	if (xmlHttp == null){
-		alert("Tidak support request");
-		return;
-	}
-	var url = "get_dosen.php?kodematkul="+str;
-	xmlHttp.onreadystatechange = dosenChanged;
-	xmlHttp.open("GET",url,true);
-	xmlHttp.send(null);
-}
-function dosenChanged(){
-	if(xmlHttp.readyState == 4 || xmlHttp.readyState == "complete"){
-		document.getElementById("divDosen").innerHTML = xmlHttp.responseText;
-	}
-}
-/* END OF OPTIONS*/
 
 function GetXmlHttpObject(){
 	var xmlHttp = null;
